@@ -1,0 +1,25 @@
+{
+  "name": "n-o-d-e-mesh-network-device-app",
+  "version": "1.0.0",
+  "description": "none",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JamesZEMOURI/N-O-D-E-MESH-NETWORK-DEVICE-APP.git"
+  },
+  "keywords": [
+    "n-o-d-e"
+  ],
+  "author": "james zemouri",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/JamesZEMOURI/N-O-D-E-MESH-NETWORK-DEVICE-APP/issues"
+  },
+  "homepage": "https://github.com/JamesZEMOURI/N-O-D-E-MESH-NETWORK-DEVICE-APP#readme",
+  "devDependencies": {
+    "electron": "1.7.9"
+  }
+}
