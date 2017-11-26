@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+
+<head>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    body {
+      /*default*/
+      overflow: hidden;
+
+      cursor: default;
+      -webkit-user-select: none;
+      font-family: monospace;
+      background: #222;
+
+    }
+
+    a {
+      text-decoration: none;
+      color: #c8c8c8;
+    }
+
+    .node {
+
+      width: 100%;
+      font-size: 17px;
+      letter-spacing: 0px;
+      transition-duration: 0.2s;
+      white-space: pre;
+      font-weight: normal;
+      min-height: 100%;
+
+    }
+
+    .log-smg {
+
+      color: rgb(138, 142, 148);
+
+    }
+
+    .log-smg-err {
+      color: red;
+    }
+  </style>
+</head>
+
+
+<script>
+  var {
+    ipcRenderer,
+    remote
+  } = require('electron');
+
+  setTimeout("open_main()", 3000);
+  // Send async message to main process
+  //
+  function open_main() {
+
+    ipcRenderer.send('open-calc', 1);
+
+  }
+  // Listen for async-reply message from main process
+  ipcRenderer.on('async-reply', (event, arg) => {
+    // Print 2
+    console.log(arg);
+    // Send sync message to main process
+    let mainValue = ipcRenderer.sendSync('sync', 3);
+    // Print 4
+    console.log(mainValue);
+  });
+</script>
+
+<pre>
+
+    <a class="node" >
+  ××   ××    ×××××    ××××××    ××××××
+  ×××  ××   ××   ××   ××   ××   ××
+  ×× × ××   ××   ××   ××   ××   ×××××
+  ××  ×××   ××   ××   ××   ××   ××
+  ××   ××    ×××××    ××××××    ××××××
+</a>
+
+</pre>
+<center>
+  <p class="log-smg">Mesh device not found</p>
+</center>
+</body>
+
+</html>
